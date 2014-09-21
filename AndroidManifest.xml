@@ -44,6 +44,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+   			android:name=".SelectRoomActivity"
+   			android:windowSoftInputMode="adjustResize" />
+        <activity
+   			android:name=".ChatActivity"
+   			android:windowSoftInputMode="adjustResize" />
+        <activity
+   			android:name=".ChatObject"
+   			android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

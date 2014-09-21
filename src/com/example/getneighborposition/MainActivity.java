@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -16,6 +17,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.ConnectionResult;
@@ -118,19 +120,21 @@ public class MainActivity extends FragmentActivity implements LocationListener {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		// getMenuInflater().inflate(R.menu.activity_main, menu);
 
-		menu.add(0, MENU_A, 0, "Home");
-		menu.add(0, MENU_B, 0, "Legal Notices");
+		menu.add(0, MENU_A, 0, "チャットルームに移動");
+		//menu.add(0, MENU_B, 0, "Legal Notices");
 		return true;
 	}
 
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case MENU_A:
-			// 復帰
-			LatLng HOME = new LatLng(35.02878398517723, 135.77929973602295);
-			moveCamera2Target(true, HOME, 18.0f, 60.0f, 0.0f);
+			// チャットルームの選択
+			
+			Intent intent = new Intent(this, SelectRoomActivity.class);
+			
+			startActivity(intent);
+			
 			return true;
-
 		case MENU_B:
 			// Legal Notices
 			String LicenseInfo = GooglePlayServicesUtil
